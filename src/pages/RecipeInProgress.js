@@ -70,6 +70,7 @@ function RecipeInProgress() {
     <div>
       {isFetched && (
         <main className="recipe-in-progress">
+          <GoBackButton />
           <img
             className="recipeImg"
             src={ recipe.strMealThumb || recipe.strDrinkThumb }
@@ -108,10 +109,10 @@ function RecipeInProgress() {
               {recipe.strCategory}
             </h6>
           </div>
-          <h4 className="title-ingredients">Ingredients</h4>
-          <GoBackButton />
-          <div className="ingredient-list">
-            {!refresh
+          <section className="Ingredients-Container">
+            <h4 className="title-ingredients">Ingredients</h4>
+            <div className="ingredient-list">
+              {!refresh
               && ingredients.map((ingredient, index) => (
                 <div key={ index }>
                   <label
@@ -141,13 +142,16 @@ function RecipeInProgress() {
                   </label>
                 </div>
               ))}
-          </div>
-          <h4 className="title-instructions">Instructions</h4>
-          <div className="instructions-text">
-            <p data-testid="instructions" className="text-style">
-              {recipe.strInstructions}
-            </p>
-          </div>
+            </div>
+          </section>
+          <section className="Instructions-Container">
+            <h4 className="title-instructions">Instructions</h4>
+            <div className="instructions-text">
+              <p data-testid="instructions" className="text-style">
+                {recipe.strInstructions}
+              </p>
+            </div>
+          </section>
           <button
             type="button"
             data-testid="finish-recipe-btn"
