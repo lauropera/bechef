@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -8,13 +8,13 @@ import LoginProvider from './contexts/LoginProvider';
 import RecipesProvider from './contexts/RecipesProvider';
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter>
     <LoginProvider>
       <RecipesProvider>
         <App />
       </RecipesProvider>
     </LoginProvider>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root'),
 );
 
