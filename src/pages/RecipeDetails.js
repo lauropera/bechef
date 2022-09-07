@@ -13,9 +13,9 @@ import useFavorites from '../hooks/useFavorites';
 import useRecipe from '../hooks/useRecipe';
 import GoBackButton from '../components/GoBackButton';
 import RecipeDetail from '../components/RecipeDetail';
+import Instructions from '../components/Instructions';
 import '../styles/Recipes.css';
 import '../styles/RecipeDetails.css';
-import Instructions from '../components/Instructions';
 
 function RecipeDetails() {
   const history = useHistory();

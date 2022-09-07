@@ -3,7 +3,6 @@ import { useHistory, useLocation, useParams } from 'react-router-dom';
 import clipboardCopy from 'clipboard-copy';
 import useFavorites from '../hooks/useFavorites';
 import useRecipe from '../hooks/useRecipe';
-import '../styles/RecipeInProgress.css';
 import {
   doneRecipe,
   getRecipesInProgress,
@@ -14,6 +13,7 @@ import RecipeCardDetails from '../components/RecipeCardDetails';
 import RecipeDetail from '../components/RecipeDetail';
 import IngredientsList from '../components/IngredientsList';
 import Instructions from '../components/Instructions';
+import '../styles/RecipeInProgress.css';
 
 function RecipeInProgress() {
   const history = useHistory();
@@ -62,7 +62,7 @@ function RecipeInProgress() {
     checkSaved.some((ingredient) => ingredient === newIngredient));
 
   return (
-    <div>
+    <main>
       {isFetched && (
         <main className="recipe-in-progress">
           <GoBackButton />
@@ -98,7 +98,7 @@ function RecipeInProgress() {
           </button>
         </main>
       )}
-    </div>
+    </main>
   );
 }
 

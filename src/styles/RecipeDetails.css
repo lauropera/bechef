@@ -136,7 +136,9 @@
 
 @media screen and ( min-width : 420px ) {
 
-  .Recipe-Details-Container .btn { width: 380px !important; }
+  .Recipe-Details-Container .btn, .recipe-in-progress .btn {
+    width: 380px !important;
+  }
 
   .video-style iframe {
     height: 180px;
