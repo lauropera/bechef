@@ -1,0 +1,54 @@
+import { bool, func, shape } from 'prop-types';
+import React from 'react';
+import {
+  HiHeart,
+  HiOutlineHeart,
+  HiOutlineShare,
+  HiShare,
+} from 'react-icons/hi';
+
+function RecipeDetail({
+  recipe,
+  copyLink,
+  linkCopied,
+  addToFavorites,
+  isFavorite,
+}) {
+  return (
+    <header className="title-share-favorite">
+      <h4 data-testid="recipe-title" className="title">
+        {recipe.strMeal || recipe.strDrink}
+      </h4>
+      <div className="btn-shareAndfavorite-position">
+        <button
+          className="btn-share-favorite"
+          type="button"
+          data-testid="share-btn"
+          alt="Share icon"
+          onClick={ copyLink }
+        >
+          {linkCopied ? <HiShare /> : <HiOutlineShare />}
+        </button>
+        <button
+          className="btn-share-favorite"
+          type="button"
+          data-testid="favorite-btn"
+          alt="Favorite icon"
+          onClick={ addToFavorites }
+        >
+          {isFavorite ? <HiHeart /> : <HiOutlineHeart />}
+        </button>
+      </div>
+    </header>
+  );
+}
+
+RecipeDetail.propTypes = {
+  recipe: shape({}).isRequired,
+  copyLink: func.isRequired,
+  linkCopied: bool.isRequired,
+  addToFavorites: func.isRequired,
+  isFavorite: bool.isRequired,
+};
+
+export default RecipeDetail;
