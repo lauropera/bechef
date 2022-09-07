@@ -96,7 +96,6 @@ function RecipeInProgress() {
                 className="btn-share-favorite"
                 type="button"
                 data-testid="favorite-btn"
-                src={ isFavorite ? blackHeart : whiteHeart }
                 alt="Favorite icon"
                 onClick={ addRecipeToFavorites }
               >
