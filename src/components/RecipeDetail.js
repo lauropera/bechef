@@ -15,31 +15,38 @@ function RecipeDetail({
   isFavorite,
 }) {
   return (
-    <header className="title-share-favorite">
-      <h4 data-testid="recipe-title" className="title">
-        {recipe.strMeal || recipe.strDrink}
-      </h4>
-      <div className="btn-shareAndfavorite-position">
-        <button
-          className="btn-share-favorite"
-          type="button"
-          data-testid="share-btn"
-          alt="Share icon"
-          onClick={ copyLink }
-        >
-          {linkCopied ? <HiShare /> : <HiOutlineShare />}
-        </button>
-        <button
-          className="btn-share-favorite"
-          type="button"
-          data-testid="favorite-btn"
-          alt="Favorite icon"
-          onClick={ addToFavorites }
-        >
-          {isFavorite ? <HiHeart /> : <HiOutlineHeart />}
-        </button>
+    <>
+      <section className="title-share-favorite">
+        <h4 data-testid="recipe-title" className="title">
+          {recipe.strMeal || recipe.strDrink}
+        </h4>
+        <div className="btn-shareAndfavorite-position">
+          <button
+            className="btn-share-favorite"
+            type="button"
+            data-testid="share-btn"
+            alt="Share icon"
+            onClick={ copyLink }
+          >
+            {linkCopied ? <HiShare /> : <HiOutlineShare />}
+          </button>
+          <button
+            className="btn-share-favorite"
+            type="button"
+            data-testid="favorite-btn"
+            alt="Favorite icon"
+            onClick={ () => addToFavorites(recipe) }
+          >
+            {isFavorite ? <HiHeart /> : <HiOutlineHeart />}
+          </button>
+        </div>
+      </section>
+      <div className="span-category">
+        <h6 data-testid="recipe-category" className="category">
+          {recipe.strAlcoholic || recipe.strCategory}
+        </h6>
       </div>
-    </header>
+    </>
   );
 }
 

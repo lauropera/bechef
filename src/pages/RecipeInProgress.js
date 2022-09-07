@@ -13,6 +13,7 @@ import GoBackButton from '../components/GoBackButton';
 import RecipeCardDetails from '../components/RecipeCardDetails';
 import RecipeDetail from '../components/RecipeDetail';
 import IngredientsList from '../components/IngredientsList';
+import Instructions from '../components/Instructions';
 
 function RecipeInProgress() {
   const history = useHistory();
@@ -78,11 +79,6 @@ function RecipeInProgress() {
             isFavorite={ isFavorite }
             linkCopied={ linkCopied }
           />
-          <div className="span-category">
-            <h6 data-testid="recipe-category" className="category">
-              {recipe.strCategory}
-            </h6>
-          </div>
           <IngredientsList
             ingredients={ ingredients }
             measures={ measures }
@@ -90,14 +86,7 @@ function RecipeInProgress() {
             checkIngredientsList={ checkIngredientsList }
             setProgressRecipe={ setProgressRecipe }
           />
-          <section className="Instructions-Container">
-            <h4 className="title-instructions">Instructions</h4>
-            <div className="instructions-text">
-              <p data-testid="instructions" className="text-style">
-                {recipe.strInstructions}
-              </p>
-            </div>
-          </section>
+          <Instructions recipe={ recipe } />
           <button
             type="button"
             data-testid="finish-recipe-btn"

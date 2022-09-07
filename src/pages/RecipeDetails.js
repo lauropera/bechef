@@ -2,24 +2,20 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
 import clipboardCopy from 'clipboard-copy';
 import {
-  HiOutlineHeart,
-  HiHeart,
-  HiOutlineShare,
-  HiShare,
-} from 'react-icons/hi';
-import {
   getDoneRecipes,
   getRecipesInProgress,
   startRecipe,
 } from '../services/saveStorage';
+import { RecipesContext } from '../contexts/Contexts';
 import SuggestedRecipe from '../components/SuggestedRecipe';
 import RecipeCardDetails from '../components/RecipeCardDetails';
 import useFavorites from '../hooks/useFavorites';
 import useRecipe from '../hooks/useRecipe';
+import GoBackButton from '../components/GoBackButton';
+import RecipeDetail from '../components/RecipeDetail';
 import '../styles/Recipes.css';
 import '../styles/RecipeDetails.css';
-import { RecipesContext } from '../contexts/Contexts';
-import GoBackButton from '../components/GoBackButton';
+import Instructions from '../components/Instructions';
 
 function RecipeDetails() {
   const history = useHistory();
@@ -79,36 +75,13 @@ function RecipeDetails() {
               recipe={ recipe }
               showCategory
             />
-            <div className="title-share-favorite">
-              <h2 className="title" data-testid="recipe-title">
-                {recipe.strMeal || recipe.strDrink}
-              </h2>
-              <div className="btn-shareAndfavorite-position">
-                <button
-                  className="btn-share-favorite"
-                  type="button"
-                  data-testid="share-btn"
-                  onClick={ copyLink }
-                  alt="Share icon"
-                >
-                  {copiedToClipboard ? <HiShare /> : <HiOutlineShare />}
-                </button>
-                <button
-                  name={ isFavorite ? 'favorite' : 'not-favorite' }
-                  className="btn-share-favorite"
-                  type="button"
-                  data-testid="favorite-btn"
-                  onClick={ () => addRecipeToFavorites(recipe) }
-                >
-                  {isFavorite ? <HiHeart /> : <HiOutlineHeart />}
-                </button>
-              </div>
-            </div>
-            <div className="span-category">
-              <p className="category" data-testid="recipe-category">
-                {recipe.strAlcoholic || recipe.strCategory}
-              </p>
-            </div>
+            <RecipeDetail
+              recipe={ recipe }
+              copyLink={ copyLink }
+              linkCopied={ copiedToClipboard }
+              addToFavorites={ addRecipeToFavorites }
+              isFavorite={ isFavorite }
+            />
             <section className="Ingredients-Container">
               <h4 className="title-ingredients">Ingredients</h4>
               <div className="ingredient-list">
@@ -123,14 +96,7 @@ function RecipeDetails() {
                 ))}
               </div>
             </section>
-            <section className="Instructions-Container">
-              <h4 className="title-instructions">Instructions</h4>
-              <div className="instructions-text">
-                <p data-testid="instructions" className="text-style">
-                  {recipe.strInstructions}
-                </p>
-              </div>
-            </section>
+            <Instructions recipe={ recipe } />
             <button
               type="button"
               data-testid="start-recipe-btn"
