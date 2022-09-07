@@ -5,10 +5,8 @@ import { bool, shape, string } from 'prop-types';
 import { BiDrink } from 'react-icons/bi';
 import { GiMeal } from 'react-icons/gi';
 import { IoMdInfinite } from 'react-icons/io';
-import { HiOutlineShare, HiShare } from 'react-icons/hi';
-import EmptyListMessage from './EmptyListMessage';
-import '../styles/RecipesList.css';
 import RecipeListCard from './RecipeListCard';
+import '../styles/RecipesList.css';
 
 function RecipesList({ props: { key, useTags, favoriteBtn } }) {
   const history = useHistory();
@@ -117,7 +115,9 @@ function RecipesList({ props: { key, useTags, favoriteBtn } }) {
       <main className="Recipes-List-Container">
         <ul className="recipes-list">
           {recipesList.length === 0 ? (
-            <EmptyListMessage />
+            <div className="Empty-Message-Container">
+              <h4>You do not have any recipe here yet, start adding some!</h4>
+            </div>
           ) : (
             recipesList.map((recipe, index) => (
               <RecipeListCard
