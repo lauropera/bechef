@@ -20,6 +20,8 @@ Nesse projeto em grupo desenvolvemos um aplicativo de Receitas, onde você pode 
 - Kanban
 - Scrum
 
+<br />
+
 ## ⚙️ Tecnologias
 
 - HTML
