@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/bechef/static/css/main.2bfb0630.css",
+    "main.js": "/bechef/static/js/main.513f5e98.js",
+    "static/media/logo.png": "/bechef/static/media/logo.23e21c5eab11e166b438.png",
+    "static/media/logo-alt.png": "/bechef/static/media/logo-alt.fb904cc4244d20bcf257.png",
+    "static/media/blackHeartIcon.svg": "/bechef/static/media/blackHeartIcon.083cb006913d197c95857ebfa2161db7.svg",
+    "index.html": "/bechef/index.html",
+    "static/media/default-user.svg": "/bechef/static/media/default-user.347d90fa33db6c0bd42c6f7990aff802.svg",
+    "main.2bfb0630.css.map": "/bechef/static/css/main.2bfb0630.css.map",
+    "main.513f5e98.js.map": "/bechef/static/js/main.513f5e98.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bfb0630.css",
+    "static/js/main.513f5e98.js"
+  ]
+}
