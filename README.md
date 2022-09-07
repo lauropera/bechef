@@ -95,7 +95,7 @@ Nesse projeto em grupo desenvolvemos um aplicativo de Receitas, onde você pode 
   <tr>
       <td align="center">
       <a href="https://github.com/lauropera">
-        <img src="https://avatars.githubusercontent.com/u/96854380?v=4" width="100px;" alt="Foto de Lauro Pereira no GitHub" style="border-radius:100%;"/><br>
+        <img src="https://avatars.githubusercontent.com/u/96854380?v=4" width="100px;" alt="Foto de Lauro Pereira no GitHub"/><br>
         <sub>
           <b>Lauro Pereira</b>
         </sub>
@@ -103,7 +103,7 @@ Nesse projeto em grupo desenvolvemos um aplicativo de Receitas, onde você pode 
     </td>
       <td align="center">
       <a href="https://github.com/thiagorvianas">
-        <img src="https://avatars.githubusercontent.com/u/94135495?v=4" width="100px;" alt="Foto de Thiago Viana no GitHub" style="border-radius:100%;" /><br>
+        <img src="https://avatars.githubusercontent.com/u/94135495?v=4" width="100px;" alt="Foto de Thiago Viana no GitHub"/><br>
         <sub>
           <b>Thiago Viana</b>
         </sub>
@@ -111,7 +111,7 @@ Nesse projeto em grupo desenvolvemos um aplicativo de Receitas, onde você pode 
     </td>
         <td align="center">
       <a href="https://github.com/Paludio">
-        <img src="https://avatars.githubusercontent.com/u/102391652?v=4" width="100px;" alt="Foto de Pablo Souza no GitHub" style="border-radius:100%;" /><br>
+        <img src="https://avatars.githubusercontent.com/u/102391652?v=4" width="100px;" alt="Foto de Pablo Souza no GitHub"/><br>
         <sub>
           <b>Pablo Souza</b>
         </sub>
@@ -119,7 +119,7 @@ Nesse projeto em grupo desenvolvemos um aplicativo de Receitas, onde você pode 
     </td>
     <td align="center">
       <a href="https://github.com/marcellrpena">
-        <img src="https://avatars.githubusercontent.com/u/88504860?v=4" width="100px;" alt="Foto de Marcell Pena no GitHub" style="border-radius:100%;" /><br>
+        <img src="https://avatars.githubusercontent.com/u/88504860?v=4" width="100px;" alt="Foto de Marcell Pena no GitHub"/><br>
         <sub>
           <b>Marcell Pena</b>
         </sub>
@@ -127,7 +127,7 @@ Nesse projeto em grupo desenvolvemos um aplicativo de Receitas, onde você pode 
     </td>
     <td align="center">
       <a href="https://github.com/viniciussnx">
-        <img src="https://avatars.githubusercontent.com/u/31862989?v=4" width="100px;" alt="Foto de Vinícius Santiago no GitHub" style="border-radius:100%;"/><br>
+        <img src="https://avatars.githubusercontent.com/u/31862989?v=4" width="100px;" alt="Foto de Vinícius Santiago no GitHub"/><br>
         <sub>
           <b>Vinícius Santiago</b>
         </sub>
