@@ -7,8 +7,8 @@ import { GiMeal } from 'react-icons/gi';
 import { IoMdInfinite } from 'react-icons/io';
 import { HiOutlineShare, HiShare } from 'react-icons/hi';
 import EmptyListMessage from './EmptyListMessage';
-import favoriteIcon from '../images/blackHeartIcon.svg';
 import '../styles/RecipesList.css';
+import RecipeListCard from './RecipeListCard';
 
 function RecipesList({ props: { key, useTags, favoriteBtn } }) {
   const history = useHistory();
@@ -119,93 +119,19 @@ function RecipesList({ props: { key, useTags, favoriteBtn } }) {
           {recipesList.length === 0 ? (
             <EmptyListMessage />
           ) : (
-            recipesList.map(
-              (
-                {
-                  id,
-                  image,
-                  name,
-                  category,
-                  nationality,
-                  alcoholicOrNot,
-                  type,
-                  doneDate,
-                  tags,
-                },
-                index,
-              ) => (
-                <li key={ id } className="recipe">
-                  <button
-                    type="button"
-                    onClick={ () => toRecipePage(type, id) }
-                    className="recipe-img-btn"
-                  >
-                    <img
-                      src={ image }
-                      alt={ name }
-                      data-testid={ `${index}-horizontal-image` }
-                      className="recipe-img"
-                    />
-                  </button>
-                  <div className="recipe-info">
-                    <p data-testid={ `${index}-horizontal-top-text` }>
-                      {`${
-                        type === 'food' ? nationality : alcoholicOrNot
-                      } - ${category}`}
-                    </p>
-                    <button
-                      type="button"
-                      onClick={ () => toRecipePage(type, id) }
-                      className="recipe-title"
-                    >
-                      <h3 data-testid={ `${index}-horizontal-name` }>
-                        {name}
-                      </h3>
-                    </button>
-                    {!favoriteBtn && (
-                      <p data-testid={ `${index}-horizontal-done-date` }>
-                        {`Done in: ${doneDate}`}
-                      </p>
-                    )}
-                    <div className="tags">
-                      {useTags
-                            && tags.slice(0, 2).map((tag) => (
-                              <p
-                                key={ tag }
-                                data-testid={ `${index}-${tag}-horizontal-tag` }
-                              >
-                                {tag}
-                              </p>
-                            ))}
-                    </div>
-                  </div>
-                  <div className="share-btn">
-                    <button
-                      type="button"
-                      data-testid={ `${index}-horizontal-share-btn` }
-                      alt="Share icon"
-                      onClick={ () => shareRecipe(type, id) }
-                    >
-                      {isLinkToClipboard[id] ? (
-                        <HiShare />
-                      ) : (
-                        <HiOutlineShare />
-                      )}
-                    </button>
-                    {favoriteBtn && (
-                      <button
-                        type="button"
-                        data-testid={ `${index}-horizontal-favorite-btn` }
-                        src={ favoriteIcon }
-                        onClick={ () => removeFavorite(id) }
-                      >
-                        <img src={ favoriteIcon } alt="Favorite icon" />
-                      </button>
-                    )}
-                  </div>
-                </li>
-              ),
-            )
+            recipesList.map((recipe, index) => (
+              <RecipeListCard
+                key={ recipe.id }
+                recipe={ recipe }
+                index={ index }
+                useTags={ useTags }
+                isLinkToClipboard={ isLinkToClipboard }
+                isFavoritePage={ favoriteBtn }
+                toRecipePage={ toRecipePage }
+                shareRecipe={ shareRecipe }
+                removeFavorite={ removeFavorite }
+              />
+            ))
           )}
         </ul>
       </main>

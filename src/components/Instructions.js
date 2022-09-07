@@ -1,4 +1,5 @@
 import React from 'react';
+import { shape } from 'prop-types';
 
 function Instructions({ recipe }) {
   return (
