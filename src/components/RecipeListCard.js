@@ -72,7 +72,7 @@ function RecipeListCard({
         >
           {isLinkToClipboard[id] ? <HiShare /> : <HiOutlineShare />}
         </button>
-        {favoriteBtn && (
+        {isFavoritePage && (
           <button
             type="button"
             data-testid={ `${index}-horizontal-favorite-btn` }
