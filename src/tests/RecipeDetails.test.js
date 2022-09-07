@@ -3,9 +3,8 @@ import { screen, waitFor } from '@testing-library/react';
 import renderWithRouterAndContext from './helpers/renderWithRouterAndContext';
 import userEvent from '@testing-library/user-event';
 import RecipeDetails from '../pages/RecipeDetails';
-import oneMeal from '../../cypress/mocks/oneMeal';
-import oneDrink from '../../cypress/mocks/oneDrink';
-import doneRecipesMock from './helpers/mocks/doneRecipes';
+import oneMeal from './helpers/mocks/oneMeal';
+import oneDrink from './helpers/mocks/oneDrink';
 
 // https://trybecourse.slack.com/archives/C01T2C18DSM/p1630099534116900?thread_ts=1630092847.100100&cid=C01T2C18DSM
 jest.mock('clipboard-copy', () => jest.fn());

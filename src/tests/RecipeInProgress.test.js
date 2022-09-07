@@ -2,11 +2,9 @@ import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouterAndContext from './helpers/renderWithRouterAndContext';
-import meals from '../../cypress/mocks/meals';
-import drinks from '../../cypress/mocks/drinks';
+import meals from './helpers/mocks/meals';
+import drinks from './helpers/mocks/drinks';
 import App from '../App';
-import clipboardCopy from 'clipboard-copy';
-//import clipboardCopy from 'clipboard-copy';
 
 jest.mock('clipboard-copy', () => jest.fn());
 const mockClipboard = require('clipboard-copy');

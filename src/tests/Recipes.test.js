@@ -2,12 +2,12 @@ import React from 'react';
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import renderWithRouterAndContext from './helpers/renderWithRouterAndContext';
-import mealCategories from '../../cypress/mocks/mealCategories';
-import drinkCategories from '../../cypress/mocks/drinkCategories';
-import meals from '../../cypress/mocks/meals';
-import beefMeals from '../../cypress/mocks/beefMeals';
-import drinks from '../../cypress/mocks/drinks';
-import cocktailDrinks from '../../cypress/mocks/cocktailDrinks';
+import mealCategories from './helpers/mocks/mealCategories';
+import drinkCategories from './helpers/mocks/drinkCategories';
+import meals from './helpers/mocks/meals';
+import beefMeals from './helpers/mocks/beefMeals';
+import drinks from './helpers/mocks/drinks';
+import cocktailDrinks from './helpers/mocks/cocktailDrinks';
 import Foods from '../pages/Foods';
 import Drinks from '../pages/Drinks';
 
