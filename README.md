@@ -24,7 +24,7 @@ Nesse projeto em grupo desenvolvemos um aplicativo de Receitas, onde você pode 
 
 ## ⚙️ Tecnologias
 
-- HTML
+- HTML5
 - CSS
 - JavaScript ES6+
 - React.js
