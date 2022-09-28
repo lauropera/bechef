@@ -90,7 +90,7 @@ function RecipeListCard({
 RecipeListCard.defaultProps = {
   index: 0,
   useTags: false,
-  isLinkToClipboard: false,
+  isLinkToClipboard: {},
   isFavoritePage: false,
 };
 
@@ -98,7 +98,7 @@ RecipeListCard.propTypes = {
   recipe: shape({}).isRequired,
   index: number,
   useTags: bool,
-  isLinkToClipboard: bool,
+  isLinkToClipboard: shape({}),
   isFavoritePage: bool,
   toRecipePage: func.isRequired,
   shareRecipe: func.isRequired,

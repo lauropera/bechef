@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import RecipeDetails from '../pages/RecipeDetails';
 import oneMeal from './helpers/mocks/oneMeal';
 import oneDrink from './helpers/mocks/oneDrink';
+import { act } from 'react-dom/test-utils';
 
 // https://trybecourse.slack.com/archives/C01T2C18DSM/p1630099534116900?thread_ts=1630092847.100100&cid=C01T2C18DSM
 jest.mock('clipboard-copy', () => jest.fn());
@@ -30,7 +31,7 @@ describe('Testes gerais da tela de detalhes de uma receita', () => {
 
       const arrabiata = screen.getByRole('heading', {
         name: /Spicy Arrabiata Penne/i,
-        level: 2,
+        level: 4,
       });
       expect(arrabiata).toBeInTheDocument();
     });
@@ -49,7 +50,7 @@ describe('Testes gerais da tela de detalhes de uma receita', () => {
 
       const aquamarine = screen.getByRole('heading', {
         name: /aquamarine/i,
-        level: 2,
+        level: 4,
       });
       expect(aquamarine).toBeInTheDocument();
     });
@@ -205,13 +206,15 @@ describe('Testes gerais da tela de detalhes de uma receita', () => {
       expect(history.location.pathname).toBe('/drinks/178319');
     });
 
-    it('Testa se a receita não é renderizada caso a requisição para a API falhe', () => {
+    it('Testa se a receita não é renderizada caso a requisição para a API falhe', async () => {
       jest.spyOn(global, 'fetch').mockImplementation(async () => {
         return Promise.reject({});
       });
 
-      const { history } = renderWithRouterAndContext(<RecipeDetails />);
-      history.push(`/foods/${oneMeal.meals[0].idMeal}`);
+      await act(async() => {
+        const { history } = renderWithRouterAndContext(<RecipeDetails />);
+        history.push(`/foods/${oneMeal.meals[0].idMeal}`);
+      });
 
       const arrabiata = screen.queryByText(/Spicy Arrabiata Penne/i);
       expect(arrabiata).not.toBeInTheDocument();

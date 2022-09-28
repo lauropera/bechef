@@ -67,11 +67,11 @@ describe('Testes da pagina de receitas em progresso', () => {
     const { history } = renderWithRouterAndContext(<App />);
     history.push('/foods/52771/in-progress');
     const favoriteButton = await screen.findByTestId('favorite-btn');
-    expect(favoriteButton).toHaveAttribute('src', 'whiteHeartIcon.svg');
+    expect(favoriteButton).toHaveAttribute('name', 'not-favorite');
     userEvent.click(favoriteButton);
-    expect(favoriteButton).toHaveAttribute('src', 'blackHeartIcon.svg');
+    expect(favoriteButton).toHaveAttribute('name', 'favorite');
     userEvent.click(favoriteButton);
-    expect(favoriteButton).toHaveAttribute('src', 'whiteHeartIcon.svg');
+    expect(favoriteButton).toHaveAttribute('name', 'not-favorite');
   });
   it('Testa se, após marcar um ingrediente ele é salvo como concluído e ao desmarcar ele é removido da lista', async () => {
     global.fetch = jest.fn(() =>

@@ -10,6 +10,7 @@ import drinks from './helpers/mocks/drinks';
 import cocktailDrinks from './helpers/mocks/cocktailDrinks';
 import Foods from '../pages/Foods';
 import Drinks from '../pages/Drinks';
+import { act } from 'react-dom/test-utils';
 
 describe('Testes do componente de Receitas', () => {
   beforeEach(() => {
@@ -240,7 +241,8 @@ describe('Testes do componente de Receitas', () => {
     jest.spyOn(global, 'fetch').mockImplementation(async () => {
       return Promise.reject({});
     });
-    userEvent.click(cocktailBtn);
+
+    await act(async() => userEvent.click(cocktailBtn))
 
     const ggDrink = screen.queryByRole('heading', { name: /gg/i });
     expect(ggDrink).not.toBeInTheDocument();

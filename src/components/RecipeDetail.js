@@ -34,6 +34,7 @@ function RecipeDetail({
             className="btn-share-favorite"
             type="button"
             data-testid="favorite-btn"
+            name={ isFavorite ? 'favorite' : 'not-favorite' }
             alt="Favorite icon"
             onClick={ () => addToFavorites(recipe) }
           >
